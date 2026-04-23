@@ -1,76 +1,144 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple HTML Form</title>
-    <style>
-      label {
-        font-weight: bold;
-        color: #300acc;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Script 2.1 - form.html -->
 
-    <form action="handle_form.php" method="post">
-      <fieldset>
-        <legend>Enter your information in the form below:</legend>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple HTML Form</title>
+  <style>
+    /* Basisinstellingen voor de hele pagina */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      margin: 0;
+    }
 
-        <p>
-          <label for="name"
-            >Name:
-            <input type="text" id="name" name="name" size="20" maxlength="40" />
-          </label>
-        </p>
+    /* Het formulier container */
+    form {
+      background: #ffffff;
+      max-width: 550px;
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        <p>
-          <label for="email"
-            >Email:
-            <input
-              type="email"
-              id="email"
-              name="email"
-              size="40"
-              maxlength="60"
-            />
-          </label>
-        </p>
+    /* Fieldset en Legend styling */
+    fieldset {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
 
-        <p>
-          <label for="gender">Gender:</label>
-          <input type="radio" name="gender" id="male" value="M" />Male:
-          <input type="radio" name="gender" id="female" value="F" />Female:
-        </p>
+    legend {
+      font-weight: bold;
+      color: #300acc;
+      padding: 0 10px;
+    }
 
-        <p>
-          <label for="age">
-            <select name="age" id="age">
-              <option value="0-29">Under 30</option>
-              <option value="30-60">Between 30 and 60</option>
-              <option value="60+">Over 60</option>
-            </select>
-          </label>
-        </p>
+    /* Labels styling */
+    label {
+      display: block;
+      font-weight: bold;
+      color: #300acc;
+      margin-bottom: 5px;
+    }
 
-        <p>
-          <label for="comments"
-            >Comments:
-            <textarea
-              name="comments"
-              id="comments"
-              rows="3"
-              cols="40"
-            ></textarea>
-          </label>
-        </p>
-      </fieldset>
+    /* Tekstvelden, email, select en textarea styling */
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
 
-      <p align="center">
-        <input type="submit" name="submit" value="Submit My Information" />
+    /* Radio buttons specifiek behandelen zodat ze niet 100% breed worden */
+    input[type="radio"] {
+      width: auto;
+      margin-right: 5px;
+      margin-left: 10px;
+    }
+
+    /* De submit knop */
+    input[type="submit"] {
+      background-color: #300acc;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #240899;
+    }
+
+    /* Ruimte tussen de paragrafen */
+    p {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="handle_form.php" method="post">
+    <fieldset>
+      <legend>Enter your information in the form below:</legend>
+
+      <p>
+        <label for="name">Name:
+          <input type="text" id="name" name="name" size="20" maxlength="40" />
+        </label>
       </p>
-      
-    </form>
-  </body>
+
+      <p>
+        <label for="email">Email:
+          <input type="email" id="email" name="email" size="40" maxlength="60" />
+        </label>
+      </p>
+
+      <p>
+        <label>Gender:</label>
+        <input type="radio" name="gender" id="male" value="M" /> Male
+        <input type="radio" name="gender" id="female" value="F" /> Female
+      </p>
+
+      <p>
+        <label for="age">Age:
+          <select name="age" id="age">
+            <option value="0-29">Under 30</option>
+            <option value="30-60">Between 30 and 60</option>
+            <option value="60+">Over 60</option>
+          </select>
+        </label>
+      </p>
+
+      <p>
+        <label for="comments">Comments:
+          <textarea name="comments" id="comments" rows="3" cols="40"></textarea>
+        </label>
+      </p>
+    </fieldset>
+
+    <p align="center">
+      <input type="submit" name="submit" value="Submit My Information" />
+    </p>
+
+  </form>
+</body>
+
 </html>
