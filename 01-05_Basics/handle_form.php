@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    // Script 2.2 - handle_form.php
+    // Script 2.3 - handle_form.php
 
     // Create shorthand variables to hold the data from the form:
     $name = $_REQUEST['name'];
