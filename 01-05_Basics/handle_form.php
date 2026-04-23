@@ -11,7 +11,7 @@
     <?php
     // Script 2.2 - handle_form.php
 
-    // Create shorhand variables to hold the data from the form:
+    // Create shorthand variables to hold the data from the form:
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
     $comments = $_REQUEST['comments'];
