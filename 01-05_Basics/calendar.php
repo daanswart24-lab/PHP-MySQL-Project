@@ -10,17 +10,13 @@
 <body>
     <form action="calendar.php">
         <?php
-        # Script  2.6 - calendar.php
+        # Script  2.9 - calendar.php #2
 
         // This script generates three drop-down lists: 
         // one for the month, one for the day, and one for the year.
 
         // Make the months array:
-        $months = array(1 => 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
-
-        // Make the days and years arrays:
-        $days = range(1, 31);
-        $years = range(2011, 2021);
+        $months = array(1 => 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');       
 
         // Print the month drop-down list:
         echo '<select name="month">';
@@ -31,15 +27,15 @@
 
         // Print the day drop-down list:
         echo '<select name="day">';
-        foreach ($days as $value) {
-            echo "<option value=\"$value\">$value</option>\n";
+        for ($day = 1; $day <= 31; $day++) {
+            echo "<option value=\"$day\">$day</option>\n";
         }
         echo '</select>';
 
         // Print the year drop-down list:
         echo '<select name="year">';
-        foreach ($years as $value) {
-            echo "<option value=\"$value\">$value</option>\n";
+        for ($year = 2011; $year <= 2021; $year++) {
+            echo "<option value=\"$year\">$year</option>\n";
         }
         echo '</select>';
 
